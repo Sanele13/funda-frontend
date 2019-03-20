@@ -1,0 +1,17 @@
+.top-bar{
+  background-color: green;
+  color: white;
+  height: 70px;
+  .reg-login{
+    float: right;
+    .mat-button{
+      border-radius: 0px !important;
+    }
+    .login{
+      margin: 15px 5px;
+    }
+    .register{
+      margin: 15px 5px;
+    }
+  }
+}

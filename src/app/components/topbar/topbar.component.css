@@ -1,0 +1,19 @@
+.top-bar {
+  background-color: green;
+  color: white;
+  height: 70px;
+}
+.top-bar .reg-login {
+  float: right;
+}
+.top-bar .reg-login .mat-button {
+  border-radius: 0px !important;
+}
+.top-bar .reg-login .login {
+  margin: 15px 5px;
+}
+.top-bar .reg-login .register {
+  margin: 15px 5px;
+}
+
+/*# sourceMappingURL=topbar.component.css.map */
