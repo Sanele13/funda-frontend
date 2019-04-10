@@ -1,0 +1,30 @@
+<div class="container" id="questions_container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class = "nav-link active" data-toggle="tab" href="#all_questions">All questions</a></li>
+    <li class="nav-item"><a class = "nav-link" data-toggle="tab" href="#my_questions">My questions</a></li>
+  </ul>
+  <br>
+  <div class="tab-content">
+    <div id="all_questions" class="tab-pane active">
+      <div id = "questions">
+        <div *ngFor="let question of questions" class="card" id='qa-{{question.question_id}}'>
+          <span class="username_card text-left" id="usr-{{question.user_id}}">{{question.username}}</span>
+          <div class="card-body">
+            {{question.question}}
+          </div>
+          <div class="container d-flex w-100">
+            <div class="card-link text-left show_answers">
+              Show <span class="answers_count">{{question.num_of_answers}}</span> answers
+            </div>
+            <div class="card-link answer_link" >
+              <button class="btn" (click)="openAnswerPopup(question)">Answer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="my_questions" class="tab-pane fade">
+
+    </div>
+  </div>
+</div>

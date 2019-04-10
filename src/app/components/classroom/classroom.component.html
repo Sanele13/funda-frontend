@@ -1,0 +1,75 @@
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('home')">Home</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('q-and-a')">Q&A</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('notes')">Notes</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('tutorials')">Tutorials</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('cue-cards')">Cue Cards</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link btn" (click)="goTo('chat')">Chat</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id = "main-container" class="row">
+  <div id = "sidebar" class = "col-md-2 border-right border-success">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-column">
+      <a class="navbar-brand" href="#">Subjects</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <mat-accordion *ngFor="let subject of subjects">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{subject.title}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button class="btn" (click)="setMessage(subject.title,10)">Grade 10</button>
+          <button class="btn" (click)="setMessage(subject.title,11)">Grade 11</button>
+          <button class="btn" (click)="setMessage(subject.title,12)">Grade 12</button>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </nav>
+  </div>
+  <div class = "col-md-10 text-sm-center">
+    <h4 id="selection-message" *ngIf="!message">Select a subject under 'Subjects', on your left, and then select your grade. :)</h4>
+    {{message}}
+    <div *ngIf="page==='home'">
+      home
+    </div>
+
+    <div *ngIf="page==='q-and-a'">
+      <app-question-answers [questions]="qa"></app-question-answers>
+    </div>
+
+    <div *ngIf="page==='notes'">
+      <app-notes></app-notes>
+    </div>
+
+    <div *ngIf="page==='tutorials'">
+      <app-tutorials></app-tutorials>
+    </div>
+
+    <div *ngIf="page==='cue-cards'">
+      <app-cuecards></app-cuecards>
+    </div>
+
+    <div *ngIf="page==='chat'">
+      chat
+    </div>
+  </div>
+</div>

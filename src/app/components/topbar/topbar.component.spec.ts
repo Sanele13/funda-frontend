@@ -34,19 +34,19 @@ describe('TopbarComponent', () => {
     expect(component.loggedIn).toBeFalsy();
   });
 
-  it('should have a login button', () => {
-    fixture = TestBed.createComponent(TopbarComponent);
-    component = fixture.componentInstance;
-    deLogin = fixture.debugElement.query(By.css('.login'));
-    loginBtn = deLogin.nativeElement;
-    expect(loginBtn.innerHTML).toContain('Login');
-  });
-
-  it('should have a register button', () => {
-    fixture = TestBed.createComponent(TopbarComponent);
-    component = fixture.componentInstance;
-    deReg = fixture.debugElement.query(By.css('.register'));
-    registerBtn  = deReg.nativeElement;
-    expect(registerBtn.innerHTML).toContain('Register');
-  });
+  // it('should have a login button', () => {
+  //   fixture = TestBed.createComponent(TopbarComponent);
+  //   component = fixture.componentInstance;
+  //   deLogin = fixture.debugElement.query(By.css('.login'));
+  //   loginBtn = deLogin.nativeElement;
+  //   expect(loginBtn.innerHTML).toContain('Login');
+  // });
+  //
+  // it('should have a register button', () => {
+  //   fixture = TestBed.createComponent(TopbarComponent);
+  //   component = fixture.componentInstance;
+  //   deReg = fixture.debugElement.query(By.css('.register'));
+  //   registerBtn  = deReg.nativeElement;
+  //   expect(registerBtn.innerHTML).toContain('Register');
+  // });
 });
